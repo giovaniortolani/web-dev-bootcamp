@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Register Form</title>
+</head>
+<body>
+    <h1>Register</h1>
+    <!-- "action" default é mandar para a própria página (refresh) -->
+    <!-- "method" default é GET -->
+    <!-- poderia colocar uma div (escopo de bloco) no lugar dos br aqui -->
+    <form>
+        <div>
+            <label for="firstname">First name:</label>
+            <input type="text" name="firstname" id="firstname" placeholder="Giovani" required>
+            <label for="lastname">Last name:</label>
+            <input type="text" name="lastname" id="lastname" placeholder="Ortolani Barbosa" required>
+        </div>
+        <div>
+            <label>Male<input type="radio" name="gender" value="male"></label>
+            <label>Female<input type="radio" name="gender" value="female"></label>
+            <label>Other<input type="radio" name="gender" value="other"></label>
+        </div>
+        <div>
+            <label>Email:<input type="email" name="email" placeholder="your email" required></label>
+
+            <!-- Pode ser feito con minlength e maxlength, porém apenas o Chrome possui suporte -->
+            <!-- <label>Password:<input type="password" name="password" minlength="5" maxlength="10" placeholder="your password" required></label>  --> 
+            <!-- Pode ser feito com pattern, a maioria do browsers possui suporte -->
+            <!-- pattern é uma expressão regular, nesse caso significa qualquer coisa (.) com tamanho de 5 a 10 chars-->
+            <label>Password:<input type="password" name="password" placeholder="your password" pattern=".{5,10}" title="5 to 10 characters" required></label>
+        </div>
+        <div>
+            <label>
+                Birtday:
+                <select name="birthday_month">
+                    <option value="1" disabled selected>Month</option>
+                    <option value="1">January</option>
+                    <option value="2">February</option>
+                    <option value="3">March</option>
+                </select>
+                <select name="brithday_day">
+                    <option disabled selected>Day</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                </select>
+                <select name="brithday_year">
+                    <option disabled selected>Year</option>
+                    <option>1997</option>
+                    <option>1997</option>
+                    <option>1998</option>
+                </select>
+            </label>
+        </div>
+        <div>
+            <label>I agree to the terms and conditions<input type="checkbox" name="agree"></label>  <!-- pode usar value para passar algo-->
+        </div>
+        <div>
+            <input type="submit"> <!-- value default é Submit-->
+        </div>
+    </form>
+</body>
+</html>

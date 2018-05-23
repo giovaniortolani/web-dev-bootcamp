@@ -1,0 +1,42 @@
+# url
+- Ex: body { background: url(); }
+- Faz com que o que está nessa url dentro dos parenteses seja carregado como background de body
+
+# background-repeat: no-repeat; 
+- Não repete a imagem na horizontal nem vertical
+
+# background-size: cover;
+- Faz com que a imagem cubra toda a área disponível (estica)
+
+# border
+- Possui width, color e style
+- Pode colocar como um atributo só na ordem (width style color)
+- Tem que usar os 3 para funcionar
+
+# text-decoration
+- Pode estilizar o texto com underline, line-through etc
+
+## Seletores (https://code.tutsplus.com/tutorials/the-30-css-selectors-you-must-memorize--net-16048)
+
+# elemento 
+# id
+# class
+# start (*)
+- Seleciona tudo na página (todos os elementos)
+# descendant selector 
+- Seleciona todo elemento que estiver dentro de outro de acordo com o que foi passado
+- Ex: li a { } = seleciona todos os <a> que estão dentro de <li>
+- Ex: li.special { } = seleciona todos os elementos com a classe special que estejam dentro de <li>
+# adjacent selector
+- Seleciona todo elemento que vem imediatamente depois de um determinado elemento (irmãos)
+- Ex: h4 + ul { } = seleciona o primeiro <ul> que vem imediatamente depois de <h4>
+# attribute selector
+- Seleciona todos os elementos que atendam a um certo valor de atributo
+- Ex: a[href="google.com"] = seleciona todos os <a> que possuam esse atributo
+- Ex: input[type="checkbox"] = seleciona todos os elementos <input> que sejam do tipo checkbox
+# nth of type
+- Seleciona o enésimo elemento de algum tipo
+- Ex: li:nth-of-type(3) { } = seleciona todo terceiro li de cada lista
+- Ex: ul:nth-of-type(3) { } = seleciona toda terceira lista a nível de bloco
+        Caso tenha 2 divs com 3 listas, seleciona a terceira dentro de cada div
+- Ex: li:nth-of-type(even) { } = seleciona todos <li> que sejam pares (começa a contagem a partir do 1)

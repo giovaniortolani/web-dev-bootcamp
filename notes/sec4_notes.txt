@@ -1,0 +1,18 @@
+# Label
+- Adiciona label/legenda para elementos individuais no formulário.
+- Provê acessebilidade. Leitores de tela conseguem identificar as labels e lê-las.
+- Ao clicar ou tocar no texto da label, o campo já é colocado em foco.
+- 2 maneiras de ser usado:
+    1) colocar o input tag dentro da label
+    2) colocar o input tag fora da label e referenciar o id do elemento input na label a partir do atributo for
+
+# required
+- Booleano.
+- Verifica se um campo está vazio, se está pede para ser preenchido.
+
+# button vs input type=submit
+- Se o button vem como último elemento do form, ele já vai dar submit por padrão
+
+# select
+- Menu dropdown
+- Tag option é para colocar uma opção na listagem
