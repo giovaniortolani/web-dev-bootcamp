@@ -16,12 +16,14 @@
 # text-decoration
 - Pode estilizar o texto com underline, line-through etc
 
-## Seletores (https://code.tutsplus.com/tutorials/the-30-css-selectors-you-must-memorize--net-16048)
+========================================================================================================
+
+## Seletores https://code.tutsplus.com/tutorials/the-30-css-selectors-you-must-memorize--net-16048)
 
 # elemento 
 # id
 # class
-# start (*)
+# star (*)
 - Seleciona tudo na página (todos os elementos)
 # descendant selector 
 - Seleciona todo elemento que estiver dentro de outro de acordo com o que foi passado
@@ -30,6 +32,8 @@
 # adjacent selector
 - Seleciona todo elemento que vem imediatamente depois de um determinado elemento (irmãos)
 - Ex: h4 + ul { } = seleciona o primeiro <ul> que vem imediatamente depois de <h4>
+# X > Y
+- Seleciona apenas os Y que seham filhos diretos de X
 # attribute selector
 - Seleciona todos os elementos que atendam a um certo valor de atributo
 - Ex: a[href="google.com"] = seleciona todos os <a> que possuam esse atributo
@@ -40,3 +44,10 @@
 - Ex: ul:nth-of-type(3) { } = seleciona toda terceira lista a nível de bloco
         Caso tenha 2 divs com 3 listas, seleciona a terceira dentro de cada div
 - Ex: li:nth-of-type(even) { } = seleciona todos <li> que sejam pares (começa a contagem a partir do 1)
+
+========================================================================================================
+
+## Especificidade e cascata
+
+- O seletor que estiver mais próximo (for mais específico) ao elemento é o qual será selecionado.
+- Ordem (menos específico para mais específico): elemento/tipo < classe/atributo/pseudo-classe < id < inline style
