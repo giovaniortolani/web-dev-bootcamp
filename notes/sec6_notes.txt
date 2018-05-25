@@ -1,0 +1,71 @@
+Text and Fonts
+==============
+
+# font-family
+
+# font-size
+- px
+- cm
+- em (tamanho de fonte relativo)
+    - 1 em = 16px por default
+    - pega o tamanho do elemento pai como referência
+- nomes (large, small, xx-small etc)
+- % 
+    - pega o tamanho do elemento pai como referência
+
+# font-weight
+- seta o quão grossos ou finos são os caracteres
+- bold, normal, (100 - 900)
+
+# font-height
+- espaçamento entre linhas 
+- o valor é um multiplicador do valor padrão
+- Ex: p { line-height: 3; } 
+
+# text-align
+- alinhamento do texto de um elemento
+- center, right etc
+
+# text-decoration
+- underline, overline, sobrescrito (line-through)
+
+Google Fonts
+============
+https://fonts.google.com/?selection.family=Oswald&sort=popularity
+
+Introduction to the Box Model
+=============================
+- Todo elemento é representado como uma caixa
+- Cada caixa possui 4 arestas: margin edge, border edge, padding edge e content edge
+- content = width e height mudam as dimensões de um elemento (px, % etc)
+    - % é em relação ao elemento pai
+- border = é o que já conhecemos
+    - pode-se especificar top, right, bottom, left
+- padding = preenchimento dentro da border
+    - preenche todos os lados por padrão
+    - pode-se especificar top, right, bottom, left
+- margin = espaço fora da border
+    - preenche todos os lados por padrão 
+    - pode-se especificar top, right, bottom, left
+    - margin: 0 auto 0 auto  = centralizar o elemento
+    - margin 50px 20px = 50 top e bottom, 20 left e right
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

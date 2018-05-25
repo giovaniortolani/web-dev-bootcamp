@@ -1,0 +1,24 @@
+#title {
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+    font-size: 3em; /* ou 300% */
+}
+
+table {
+    margin: 0 auto 0 auto; /* ou margin: auto; */
+}
+
+td {
+    width: 100px;
+    height: 100px;
+}
+
+.vertical-col {
+    border-right: 2px solid black;
+    border-left: 2px solid black;
+}
+
+.horizontal-col {
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+}
