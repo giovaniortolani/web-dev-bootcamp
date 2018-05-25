@@ -1,0 +1,23 @@
+img {
+    width: 30%; 
+    /* Relativo ao tamanho do body (elemento pai), 30% do body 
+       Acaba ficando responsivo, pois se o body aumenta ou diminui a img muda em relação a ele */
+    float: left;
+    /* Modifica a flutuação do elemento, fazendo com que se posicione ao lado esquerdo do seu container (body) 
+       Quando acaba o espaço, pula para a próxima linha */
+    margin: 1.66%; 
+    /* Aplica para igualmente para top, right, bottom, left
+       Dividiu os 10% do que sobrou na página por 6 margens, cada uma ficou com 1.66% */
+}
+
+p {
+    font-family: 'Raleway', sans-serif;
+    font-size: 23px;
+    font-weight: 800;
+    text-align: right;
+    text-transform: uppercase; /* ou poderia mudar o texto dentro do html */
+    margin-left: 1.66%; /* para alinhar com as fotos */
+    padding-bottom: 20px; /* joga a borda mais para baixo */
+    border-bottom: 2px solid #C6C6C6;
+    width: 30%; /* diminui o tamanho do elemento em si para 30%, assim a borda fica alinhada com a foto */
+}
