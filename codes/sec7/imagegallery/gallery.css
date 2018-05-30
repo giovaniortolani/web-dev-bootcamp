@@ -1,0 +1,19 @@
+body {
+    padding-top: 70px;
+}
+
+/* Utilizada para alinhar e remover os espaços em branco entre fotos de tamanhos diferentes */
+/* https://www.udemy.com/the-web-developer-bootcamp/learn/v4/questions/1989586 */
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Redimensionar imagens para o mesmo tamanho - não funcionou */
+/* https://codepen.io/nax3t/pen/MJwpdb */
+/*.image {
+  width: 100%;
+  height: 250px;
+  background-size: cover;
+  background-position: center;
+}*/
