@@ -52,9 +52,6 @@ Introduction to the Box Model
 
 Image Gallery Code Along
 ========================
-
-Just so you don't get confused, around the 8 minute mark in the next video, Colt goes over the image sizing calculation. He mistakenly says "..each one of these [images] is 10%..", when he should have said "each one of these is 30%, making 90% total, plus 1.66% times 6 for the margins, which equals 99.96%" (nearly 100%).
-
 - float = faz com que os elementos (div, no caso) não peguem a linha toda (não sejam elementos a nível de bloco)
 
 

@@ -1,0 +1,100 @@
+What is Bootstrap? (https://getbootstrap.com/docs/3.3/)
+==================
+- Biblioteca com CSS e JS que permite fazer sites responsivos e bonitos rapidamente, pois já tem muita coisa pronta
+- Bootstrap 3 to Bootstrap 4: https://getbootstrap.com/docs/4.0/migration/
+- Mudando o YelpCamp para BS 4: https://www.youtube.com/watch?v=NHHh0sj1uKY
+
+Adding Bootstrap to our Project
+===============================
+- Baixar e linkar para o arquivo ou usar CDN (Content Delivery Network)
+- Podemos fazer o nosso estilo sobrescrever o do Bootstrap apenas criando estilos com o mesmo nome da classe ou id
+    Ex: .btn-danger { color: orange; }  
+
+# buttons
+- https://getbootstrap.com/docs/3.3/css/#buttons
+
+Components, Forms and Inputs
+=============================
+
+# container
+- Container que coloca um pouco de margin e padding em um elemento centralizando-o
+
+# jumbotron
+- Componenente colocado em um div geralmente que irá destacar o conteúdo dentro dela
+
+# form-group
+- Agrupa labels e input dentro de forms com um espaçamento legal
+
+# form-control
+- Campo do input fica mais bonito, não pega o default do browser
+
+# help-block
+- Textinho de ajuda com formatação legal
+
+# form-inline
+- Elementos do form ficam na mesma linha
+
+Nav Bars
+========
+
+- Utiliza o elemento <nav>
+- Classes: navbar navbar-default
+- Ex> <nav class="navbar navbar-default"></nav>
+
+# nome da empresa
+- classes: <div> com navbar-header e dentro <a> com navbar-brand
+- link com href="#" não leva para lugar algum
+- Ex: <div class="navbar-header"> <a class="navbar-brand" href="#">Koffeee</a> </div>
+
+# nav navbar-nav
+- Coloca <li> e <a> dentro da <li> na <ul> que possui as classes acima para ter "About", "Contact etc"
+- Ex: <ul class="nav navbar-nav"> <li> <a href="#">About</a> </li> </ul>
+
+# nav navbar-nav navbar-right
+- Coloca o conteúdo do lado direito da navbar
+- Ex: <ul class="nav navbar-nav navbar-right"> <li> <a href="#">About</a> </li> </ul>
+
+# collapse navbar-collapse
+- Tudo o que estiver dentro da div com essa classe irá colapsar quando a tela atingir um certo comprimento
+- Geralmente transforma em um menu hamburguer o que foi colapsado
+- o id do elemento com essas classes será referenciado pela função que irá esconder os elementos e criar o hamburguer
+- atributo data-target em button irá referenciar o id do elemento que será colapsado
+
+The Grid System
+=================
+
+- Esqueleto da aplicação. Maneira fácil de adicionar estrutura e layout
+- Todo container no BS pode ser divido em 12 colunas
+- Podemos especificar quantas colunas queremos utilizar no container
+- Grid deve estar sempre dentro de um elemento com a classe "container" para ser utilizado
+- Definir uma <div> com a classe "row" e dentro dessa "row" trabalhar com as colunas
+
+# 4 tamanhos para colunas
+    - col-xs (celular), col-sm (tablet), col-md (notebook), col-lg (desktop)
+    - com isso podemos ter 4 layouts diferentes, dependendo do tamanho da tela
+        - especificar dentro das classes do elemento qual o tamanho a ser adotado dependendo do dispositivo
+        - Ex: <div class="col-lg-1 col-md-2"></div>
+              Vai pegar 1 unidade quando for large e 2 quando for medium
+- col-XX-units em um linha (row) sempre devem somar 12
+- podemos não especificar o lg e o xs, pois BS já infere a partir do md e sm
+    - se col-md-3 então col-lg-3
+    - col-xs-12, geralmente (deixa tudo empilhado)
+
+# grids aninhados
+- inserir uma div "row" dentro de uma coluna e adicionar subcolunas a ela
+- Ex: <div class="row"> <div class="col-md-3 col-sm-6 pink> <div class="row"> </div> </div> </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

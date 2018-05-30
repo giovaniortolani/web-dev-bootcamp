@@ -9,18 +9,19 @@ body {
     /*
     max-width: 700px;
     width: 80px;
-    fica em 700px até que seja menor que 700px aí pega 80% da página*/
+    fica em 700px até que seja menor que 700px aí pega 80% da página
+    */
 }
 
 h2 {
     color: #2c3e50;
-    font-weight: 900;
+    font-size: 2.0rem;
 }
 
 p.date {
     color: #3498db;
     text-transform: uppercase;
-    letter-spacing: 3px;
+    letter-spacing: 3px; /* rem é relativo pelo elemento raiz (root element) da página e não pelo elemento pai, usou 0.2em */
 }
 
 p.quote {
