@@ -36,6 +36,8 @@ h1 {
 }
 
 hr {
+    /* fica em 40px até que o tamanho da hr seja maior que 90% da tela, aí fixa o tamanho em 90% */
+    max-width: 90%;
     /* varia conforme o tamanho da tela */
     /*width: 50%;*/
     width: 400px;
