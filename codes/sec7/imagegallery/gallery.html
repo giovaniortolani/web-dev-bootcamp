@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>Image Gallery</title>
+    <!-- Bootstrap css -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="gallery.css">
 </head>
@@ -9,10 +11,12 @@
     
     <!-- navbar-inverse = barra fica escura com textos claros -->
     <!-- mavbar-fixed-xxx = fixa a navbar em algum lugar, porém pode sobrepor alguns elementos da página. Para corrigir devemos adicionar um padding-top no body de 70px (navbar é 50px)-->
+    <!-- navbar-static-top não precisa colocar padding e tem a mesma função -->
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-nav-demo" aria-expanded="false"> <!-- hamburguer button -->
+                <!-- hamburguer button -->
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-nav-demo" aria-expanded="false"> 
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -33,10 +37,12 @@
         </div>
     </nav>
 
-    <div class="container"> <!-- Deixa tudo centralizado bonitinho -->
-        <div class="jumbotron"> <!-- Adiciona um destaque ao conteúdo -->
+    <!-- Deixa tudo centralizado bonitinho -->
+    <div class="container"> 
+        <!-- Adiciona um destaque ao conteúdo -->
+        <div class="jumbotron"> 
             <!-- glyphicon é usado para por alguns icones na página -->
-            <h1><span class="glyphicon glyphicon-picture" aria-hidden="true"></span> The Image Gallery</h1>
+            <h1><i class="far fa-images"></i> The Image Gallery</h1>
             <p>Tons of beautiful high resolution pictures from <a href="https://unsplash.com/">Unsplash</a></p>
         </div>
     
@@ -93,8 +99,12 @@
             </div>
         </div>
     </div>
-
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script>    
+    
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script> 
+    <!-- Font Awesome -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe" crossorigin="anonymous"></script> 
+    <!-- Bootstrap js-->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
 </body>

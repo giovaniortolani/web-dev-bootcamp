@@ -84,6 +84,9 @@ The Grid System
 - inserir uma div "row" dentro de uma coluna e adicionar subcolunas a ela
 - Ex: <div class="row"> <div class="col-md-3 col-sm-6 pink> <div class="row"> </div> </div> </div>
 
+Image Gallery with Bootstrap
+============================
+
 
 
 
