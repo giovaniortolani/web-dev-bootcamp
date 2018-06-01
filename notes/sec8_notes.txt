@@ -1,0 +1,32 @@
+Primitives
+==========
+
+- numbers (inteiro, real etc); string; booleano; null; undefined
+- string
+    - concatenação com +
+    - para usar caracteres como " e \, devemos usar o caracter de escape \ (Ex: \" e \\)
+    - possuem a propriedade length (Ex: "oi como vai".length)
+    - "hello"[0] = "h"
+
+Variables
+=========
+
+ - Devem ser camelCase
+
+Null and Undefined
+==================
+
+- undefined = variáveis declaradas e não inicializadas 
+- null = explitamente nada (variável tinha valor e atribuí um null a ela para indicar "nada")
+
+Useful Built-in Methods
+=======================
+
+- alert(msg) = mostra uma mensagem para o usuário no browser
+- console.log(msg) = imprime alguma coisa no console js 
+- prompt = mostra uma janela e pega input do usuário
+
+Writing Javascript in a Separate File
+=====================================
+
+- colocar com a tag script em head ou no final de body
