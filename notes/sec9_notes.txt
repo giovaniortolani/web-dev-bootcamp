@@ -1,0 +1,18 @@
+Boolean Logic 
+=============
+
+- == verifica apenas se o valor é igual (faz a conversão de tipo)
+- === verifica se o valor e o tipo são iguais (não faz a conversão de tipos). Recomendado usar esse aqui.
+
+Logical Operators
+=================
+
+- && (and), || (or), ! (not)
+
+# Truthy and Falsy Values
+- !!(algumacoisaaqui) diz se essa coisa é truthy or falsy
+- False, 0, "" (string vazia), null, undefined e NaN são Falsy. O resto é Truthy.
+
+Guessing Game Code Along
+========================
+- typeof(algumacoisa) = retorna o tipo daquela coisa
