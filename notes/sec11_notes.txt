@@ -1,0 +1,78 @@
+Introduction to Arrays 
+======================
+
+- define usando []
+    - ex: var friends = [x, y, z];
+    - ex: var friends = []; // vazio
+    - ex: var friends = new Array(); // vazio (incomum usar assim)
+- pode ser preenchido com qualquer tipo de dado, não precisa ser tudo a mesma coisa (tudo number, tudo string etc.)
+- possui a propriedade length (igual strings)
+    - ex: friends.length;
+
+Array Methods
+=============
+
+# push/pop
+- push = adiciona algo no fim do array, retorna o tamanho do array depois da adição
+- pop = remove o último elemento do array e retorna este elemento
+
+# shift/unshift
+- unshift = adiciona no começo do array
+- shift = remove do começo do array e retorna o elemento
+
+# indexOf
+- retorna o índice da primeira ocorrência de um elemento no array
+- retorna -1 se o elemento não estiver no array
+
+# slice
+- copia parte de um array e retorna
+- não altera o original
+- especificar como parâmetro o índice de início (inclui o elemento do índice) e de fim (não inclui o elemento do índice)
+- também realiza a cópia de um array se não passar argumentos de início e fim
+
+# splice
+- deleta elementos de um array
+- argumentos: índice de ínicio, quantos argumentos a serem removidos a partir desse índice
+
+Array Iteration
+===============
+
+# For Loop
+
+# ForEach
+- array.forEach(someFunction)
+- leva uma função como argumento (geralmente é uma função anônima), essa função será chamada para cada elemento do array
+- Com função anônima:
+    - Ex: colors.forEach(function(cor) { });
+- Com função declarada:
+    - Ex: color.forEach(printColors);
+    - Passa o elemento do array da iteração corrente automaticamente
+    - Não deve colocar parentes e argumento em printColors, pois o JS irá executar antes do forEach
+- Espera pelo menos 1 argumento mas pode ter até 3
+    - Ordem é: elemento da iteração atual, índice desse elemento, array
+- No console JS para rodar uma função anônima sozinha:
+    - (function() { // alguma coisa })() // colocar () no final
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

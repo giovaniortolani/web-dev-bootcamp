@@ -1,0 +1,41 @@
+Introduction to Functions
+=========================
+- Ex:
+    function doSomething() {
+        // blablalblabla
+    }
+- se escrever apenas doSomething (sem parenteses), vai retornar o código da função
+
+Arguments
+=========
+
+- se não passar um parâmetro que é esperado, ele vai ficar como undefined e o JS não reclama
+
+The Return Keyword
+==================
+
+- toda função retorna alguma coisa, se não diz o que deve retornar, então retorna undefined
+
+# Function declaration vs Function expression
+
+- Declaration
+    - function capitalize(str) { }
+    - Útil se formos reutilizar o código
+- Expression (função anônima = não tem nome)
+    - var capitalize = function(str) { }
+    - Função anônima geralmente é empregada quando não iremos reutilizar o código
+
+Scope
+=====
+
+- Escopo se refere ao contexto no qual algum código está sendo executado
+- Funções conseguem acessar variáveis que foram definidas fora dela, porém o oposto não é verdade (fora da função não é possível acessar variáveis de dentro da função)
+
+Higher Order Functions
+======================
+
+- Funções que tomam uma outra função como argumento OU retornam uma outra função 
+- setInterval = leva uma função como argumento e chama-a a cada intervalo de tempo especificado
+    - setInterval(function, milliseconds);
+      também é possível passar uma função anônima para setInterval
+    - clearInterval(numeroRetornado pela setInterval);
