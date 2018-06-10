@@ -1,0 +1,73 @@
+Introduction to Objects
+=======================
+
+- Podem armazenar qualquer tipo de dado (number, string, array, objects etc)
+- Declaração de um objeto (com {} e key: value dentro)
+    - var person = {
+        name: "Cindy",
+        age: 32
+    };
+    - var person = {};
+      person.name = "Travis"; 
+    - var person = new Object();
+      person.city = "London";
+- Objetos não têm ordem, ou seja, as chaves (propriedades) não têm ordem
+- Recuperação de informação:
+    1) person["name"]   person["key"]   // bracket notation
+    2) person.name      person.key      // dot notation
+
+    - Não pode usar dot notation se propriedade começa com um número
+    - Não pode usar dot notation se a propriedade tiver espaços no nome
+    - Podemos usar uma variável dentro do colchete usando bracket notation, porém com dot notation não é possível
+
+Comparing Objects and Arrays
+============================
+
+- Array é um tipo de objeto no qual as chaves são os índices ordenados
+- Objetos em geral não tem ordem em suas chaves
+
+Nested Objects and Arrays
+=========================
+
+- Ex:
+    var posts = [
+        {
+            author: "Colt",
+            title: "Cats are mediocre",
+            comments: ["<3", "I hate you"]
+        },
+        {
+            author: "Cat lover",
+            title: "Cats are awesome",
+            comments: ["Awesome post", "Terrible"]
+        }
+    ]
+
+Adding Method to Objects
+========================
+
+- Método = função que é uma propriedade dentro do objeto
+    - var obj {
+          name: "Chuck",
+          add: function(x, y) {
+              return x + y;
+          }
+      }
+- Métodos com o mesmo nome podem existir em objetos diferentes (namespace diferente)
+
+The Keyword This
+================
+
+- underscore.js, biblioteca que possui diversos métodos e todos estão agrupados no objeto _
+
+# The Keyword this
+- this = quando está dentro do objeto, se refere ao objeto inteiro
+    - var comments = {
+        data = ["Bye!", "Good job!", "Lame..."];
+        print: function() {
+            this.data.forEach(el) {
+                console.log(el);
+            }
+        }
+    }
+
