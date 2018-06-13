@@ -1,0 +1,103 @@
+Defining DOM
+============
+
+- Document Object Model
+- Interface entre o JS e o HTML + CSS
+- É através dele que podemos fazer coisas interativas com o JS
+- Métodos, funções etc do JS 
+- Browser transforma toda tag HTML em um objeto JS que pode ser manipulado
+- O modelo inteiro de HTML + CSS é chamado de DOM, é ele o objeto (document) que contém todos os outros
+- No console JS:
+    - console.dir(document);
+    - retorna o DOM com a representação de objeto
+
+Select and Manipulate
+=====================
+
+- Seleção
+    - var h1 = document.querySelector("h1");
+- Manipulação
+    - h1.style.color = "pink";
+    - style é um objeto dentro de h1, selecionamos a propriedade color dele
+
+Important Selector Methods
+==========================
+
+- document.URL (retorna a URL da página), document.links (mostra todas as anchor tags da página), document.body (retorna o body da página) etc.
+- Os métodos que iremos utilizar residem no document
+
+# document.getElementById("id");
+- seleciona elemento com id "id" e retorna um objeto com essa tag e suas propriedades (style etc)
+
+# document.getElementsByClassName("class");
+- seleciona os elementos com classe "class" e retorna uma lista com todas as tags que possuam essa classe (cada elemento da lista é um objeto)
+
+# document.getElementsByTagName("tag");
+- seleciona os elementos do tipo "tag" e retorna uma lista com todas os elementos que possuam essa tag (cada elemento da lista é um objeto)
+- mesmo que tenha apenas 1 elemento, retornará uma lista. Caso queira esse elemento deve acessar através de elems[0] ou getElementsByTagName("body")[0];
+
+# document.querySelector("css-style selector");
+- css-style selector = qualquer seletor que é usado em css (#id, .class etc)
+- retorna o PRIMEIRO ELEMENTO que dá match com o seletor de css passado como argumento
+- não precisa fazer conversões como no método acima, pode acessar direto da variável
+
+# document.querySelectorAll("css-style selector");
+- retorna uma lista de elementos que dão match com o seletor de css passado como argumento
+
+Manipulating Style
+==================
+
+- Quando o DOM é criado cada elemento (objeto) possui uma propriedade chamada style (que é um objeto com muitas propriedades, uma para cada propriedade CSS)
+- É ruim usar muitos var.style.propriedade
+- Separation of Concerns = HTML (estrutura), CSS (apresentação) e JS (comportamento) cada um é responsável pelo seu próprio domínio. Não queremos muito crossover entre eles.
+
+# Adicionando classes com JS
+- Ao invés de ficar manipulando diversas propriedades com JS, pode-se escrever uma classe com as propriedades em um arquivo CSS ou em <style> e usar o JS para adicionar essa classe em algum elemento.
+    - Ex: tag.classList.add("some-class");
+- classList = lista somente leitura que contém as classes de um dado elemento, NÃO É UM ARRAY
+    - Métodos:
+        - tag.classList.add("classe")
+        - tag.classList.remove("classe")
+        - tag.classList.toggle("classe") // se a classe já estiver em classList, remove 
+                                         // se a classe não estiver em classList, adiciona e liga
+
+Manipulating Text and Content
+=============================
+
+# tag.textContent 
+- Retorna uma string com todo o texto contido dentro da tag. Não considera outras tags como texto (ignora)
+- Também é possível alterar o conteúdo dentro de uma tag fazendo uma atribuição a tag.textContent
+    - Ex: tag.textContent = "blah blah blah"
+- Não trata a string como HTML
+
+# tag.innerHTML
+- similar ao textContent, porém retorna uma string de todo elemento HTML contido em um dado elemento (textoContent não faz isso)
+- Também é possível alterar o conteúdo dentro de uma tag fazendo uma atribuição a tag.innerHTML (porém não é comum)
+    - Ex: tag.innerHTML = "blah blah blah"
+- Trata a string como HTML
+
+Manipulating Attributes
+=======================
+
+# tag.getAttribute("attribute");
+- Retorna o valor do atributo como string
+
+# tag.setAttribute("attribute", "novo valor");
+- Seta o valor "novo valor" para "attribute"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

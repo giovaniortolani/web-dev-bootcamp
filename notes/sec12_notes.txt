@@ -65,9 +65,9 @@ The Keyword This
     - var comments = {
         data = ["Bye!", "Good job!", "Lame..."];
         print: function() {
-            this.data.forEach(el) {
+            this.data.forEach(function(el) {
                 console.log(el);
-            }
+            });
         }
     }
 
