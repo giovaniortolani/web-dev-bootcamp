@@ -1,0 +1,25 @@
+Introduction to Events
+======================
+
+- DOM Events
+- É a interatividade da página
+- Clique em um lugar, pressionamento de tecla, passar o mouse em cima de um link etc
+- Adicionamos um Event Listener a um elemento (seleciona o elemento e adiciona o Event Listener)
+
+# element.addEventListener(type, functionToCall);
+- Após selecionar o elemento vinculamos um evento a ele.
+- type = tipo de evento ocorrido ("click" etc)
+- functionToCall = callback que será executada quando ocorrer o evento do tipo type, geralmente é uma função anônima, porém também pode passar uma função declarada (sem colocar os parênteses, para não ser executada de imediato)
+    - Ex: button.addEventListener("click", function() {
+              console.log("Someone clicked on me");
+          });
+- Um elemento pode ter mais de um Event Listener vinculado a ele
+- Pode adicionar um Event Listener para cada elemento de uma lista (vindos de uma seleção de li, por ex.) através de um for. Na função anônima usar this para referenciar ao elemento que foi clicado.
+    - Ex: 
+        for(let i = 0; i < li.length; i++) {
+          li[i].addEventListener("click", function() {
+              this.style.color = "pink"; // this se refere ao elemento que foi clicado
+          });
+        }
+
+

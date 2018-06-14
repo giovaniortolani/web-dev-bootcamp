@@ -57,7 +57,7 @@ Manipulating Style
 - classList = lista somente leitura que contém as classes de um dado elemento, NÃO É UM ARRAY
     - Métodos:
         - tag.classList.add("classe")
-        - tag.classList.remove("classe")
+        - tag.classList.remove("classe") // remover uma classe que não existe NÃO gera erro, ou seja, pode fazer
         - tag.classList.toggle("classe") // se a classe já estiver em classList, remove 
                                          // se a classe não estiver em classList, adiciona e liga
 
