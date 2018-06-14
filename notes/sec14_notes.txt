@@ -22,4 +22,16 @@ Introduction to Events
           });
         }
 
+Other Typs of Events
+====================
 
+# click
+- o evento é ativado quando ocorrer um clique sobre o elemento
+# change
+- o evento é ativado quando ocorrer alguma mudança no elemento e ele perder o foco
+# input
+- o evento é ativado assim que ocorrer qualquer mudança no elemento
+# mouseover
+- o evento será ativado quando passar o mouse por cima do elemento
+# mouseout
+- o evento será ativado quando passar o mouse sair de cima do elemento
