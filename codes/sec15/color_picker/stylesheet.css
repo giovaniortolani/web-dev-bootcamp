@@ -1,0 +1,64 @@
+html, body {
+    height: 100%;
+    height: 100%;
+    font-family: 'Roboto Condensed', sans-serif;    
+}
+
+body {
+    background-color: #272822; 
+    margin: 0;
+}
+
+/* Header */
+
+h1, h2 {
+    margin: 0;
+}
+
+.title {
+    text-transform: uppercase;
+    text-align: center;
+    color: #FFFFFF;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.title-background {
+    background-color: #3A73AA;
+}
+
+.subtitle {
+    font-size: 2em;
+    font-weight: normal;
+}
+
+.main-title {
+    font-size: 3.5em;
+}
+
+/* Navbar */
+
+nav {
+    height: 25px;
+    margin-bottom: 0px;
+    border: 0px;
+}
+
+/* Quadrados */
+
+#container {
+    /* é responsivo com comprimento menor que 600px, se ficar maior que isso trava em 600px */
+    max-width: 600px;
+    /* 0 em top/bottom e auto em right/left */
+    margin: 0 auto;
+}
+
+.square {
+    /* pega apenas 30% do comprimento do elemento pai (div com id = container) */
+    width: 30%;
+    /* pega os 10% restantes do comprimento do elemeto pai e divide entre 6 margens*/
+    margin: 3.32% 1.66% 0% 1.66%;
+    padding-bottom: 30%;
+    float: left;
+    /*background-color: orange;*/
+}
