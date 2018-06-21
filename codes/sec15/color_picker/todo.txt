@@ -1,0 +1,3 @@
+- Transitions quando acerta a resposta
+- Funcionalidade do Easy e do Hard
+- Arredondar as bordas dos quadrados
