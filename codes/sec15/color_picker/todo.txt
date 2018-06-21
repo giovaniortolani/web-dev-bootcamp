@@ -1,3 +1,5 @@
-- Transitions quando acerta a resposta
-- Funcionalidade do Easy e do Hard
-- Arredondar as bordas dos quadrados
+- Transitions quando acerta a resposta (OK)
+- Funcionalidade do Easy e do Hard (OK)
+- Arredondar as bordas dos quadrados (OK)
+- Travar o jogo quando acertar (não deixar clicar em nenhum quadrado) (OK)
+- Refatorar

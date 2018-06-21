@@ -60,6 +60,7 @@ button:hover, .btn-click {
 }
 
 #feedback-display {
+    /* centraliza verticalmente o texto do span */
     line-height: 25px; 
 }
 
@@ -93,6 +94,13 @@ button:hover, .btn-click {
     /* pega os 10% restantes do comprimento do elemeto pai e divide entre 6 margens*/
     margin: 3.32% 1.66% 0% 1.66%;
     padding-bottom: 30%;
+    border-radius: 25px;
     float: left;
     /*background-color: orange;*/
+}
+
+.color-transition {
+    -webkit-transition: background-color 500ms linear;
+    -ms-transition: background-color 500ms linear;
+    transition: background-color 500ms linear;
 }
