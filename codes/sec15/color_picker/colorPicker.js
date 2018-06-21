@@ -7,13 +7,11 @@ let feedbackDisplay = document.getElementById("feedback-display");
 let newGameBtn = document.getElementById("btn-newgame");
 let easyBtn = document.getElementsByClassName("btn-difficulty")[1];
 let hardBtn = document.getElementsByClassName("btn-difficulty")[0];
+
 let difficulty = "hard"; // começa no hard
-
 let squaresLength = squares.length;
-
 let colors = [];
 let pickedColor = null;
-
 let won = false;
 
 game();
@@ -21,23 +19,21 @@ game();
 // Event Listener do clique e tratamento de acerto/erro do jogador
 for(let i = 0; i < squaresLength; i++) {
     squares[i].addEventListener("click", function() {
+        // won é usada para impedir qualquer ação nos quadrados após ganhar o jogo
         if(!won) {
             // compara a cor do quadrado clicado com a cor correta
             // let squareColor = this.style.backgroundColor;
             if(colors[i] !== colors[pickedColor]){
                 feedbackDisplay.textContent = "Try Again!";
+                // esconde o quadrado
                 this.style.backgroundColor = document.body.style.backgroundColor;
             }
             else {
                 feedbackDisplay.textContent = "Correct!";
-                titleDisplay.classList.add("color-transition");
                 // muda a cor do header
-                titleDisplay.style.backgroundColor = this.style.backgroundColor;
+                changeHeaderColor(this.style.backgroundColor);
                 // muda a cor dos quadrados
-                for(let j = 0; j < squaresLength; j++) {
-                    squares[j].classList.add("color-transition");
-                    squares[j].style.backgroundColor = this.style.backgroundColor;
-                }
+                changeSquaresColor(this.style.backgroundColor);
                 // muda o texto em newGameBtn 
                 newGameBtn.textContent = "Play Again?";
                 won = true;
@@ -72,16 +68,12 @@ hardBtn.addEventListener("click", function() {
 
 function game() {
     if(difficulty === "hard") {
-        squaresLength = squares.length;
-        for(let i = 3; i < squares.length; i++) {
-            squares[i].style.visibility = "visible";
-        }
+        squaresLength = squares.length; // 6 quadrados
+        setSquaresVisibility("visible");
     }
     else if(difficulty === "easy") {
-        squaresLength = 3;
-        for(let i = 3; i < squares.length; i++) {
-            squares[i].style.visibility = "hidden";
-        }
+        squaresLength = 3;  // 3 quadrados
+        setSquaresVisibility("hidden");
     }
 
     // Escolhe as cores dos quadrados e atribui-as
@@ -101,14 +93,32 @@ function game() {
 function reset() {
     newGameBtn.textContent = "New Colors";
     feedbackDisplay.textContent = "";
+    // titleDisplay.classList.remove("color-transition");
     titleDisplay.style.backgroundColor = "#3A73AA";
-    titleDisplay.classList.remove("color-transition");
     for(let i = 0; i < squaresLength; i++) { 
-        squares[i].classList.remove("color-transition");
+        // squares[i].classList.remove("color-transition");
     }
     colors = [];
     pickedColor = null;
     won = false;
+}
+
+function setSquaresVisibility(mode) {
+    for(let i = 3; i < squares.length; i++) {
+        squares[i].style.visibility = mode;
+    }
+}
+
+function changeHeaderColor(color) {
+    // titleDisplay.classList.add("color-transition");
+    titleDisplay.style.backgroundColor = color;
+}
+
+function changeSquaresColor(color) {
+    for(let i = 0; i < squaresLength; i++) {
+        // squares[i].classList.add("color-transition");
+        squares[i].style.backgroundColor = color;
+    }  
 }
 
 function generateRandomColors(numOfColors) {
