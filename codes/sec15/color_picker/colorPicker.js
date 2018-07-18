@@ -3,13 +3,12 @@ let squares = document.getElementsByClassName("square"); // retorna uma list com
 let rgbDisplay = document.querySelectorAll(".rgb-display");
 let titleDisplay = document.querySelector("#title-container");
 let feedbackDisplay = document.getElementById("feedback-display");
-
 let newGameBtn = document.getElementById("btn-newgame");
 let easyBtn = document.getElementsByClassName("btn-difficulty")[1];
 let hardBtn = document.getElementsByClassName("btn-difficulty")[0];
 
 let difficulty = "hard"; // começa no hard
-let squaresLength = squares.length;
+let numOfSquares = squares.length;
 let colors = [];
 let pickedColor = null;
 let won = false;
@@ -17,7 +16,7 @@ let won = false;
 game();
 
 // Event Listener do clique e tratamento de acerto/erro do jogador
-for(let i = 0; i < squaresLength; i++) {
+for(let i = 0; i < numOfSquares; i++) {
     squares[i].addEventListener("click", function() {
         // won é usada para impedir qualquer ação nos quadrados após ganhar o jogo
         if(!won) {
@@ -50,8 +49,9 @@ newGameBtn.addEventListener("click", function() {
 
 //
 easyBtn.addEventListener("click", function() {
-    easyBtn.classList.add("btn-click");
     hardBtn.classList.remove("btn-click");
+    easyBtn.classList.add("btn-click");
+    numOfSquares = 3;  // 3 quadrados
     difficulty = "easy";
     reset();
     game();
@@ -59,8 +59,9 @@ easyBtn.addEventListener("click", function() {
 
 //
 hardBtn.addEventListener("click", function() {
-    hardBtn.classList.add("btn-click");
     easyBtn.classList.remove("btn-click");
+    hardBtn.classList.add("btn-click");
+    numOfSquares = squares.length; // 6 quadrados
     difficulty = "hard";
     reset();
     game();
@@ -68,23 +69,23 @@ hardBtn.addEventListener("click", function() {
 
 function game() {
     if(difficulty === "hard") {
-        squaresLength = squares.length; // 6 quadrados
-        setSquaresVisibility("visible");
+        // numOfSquares = squares.length; // 6 quadrados
+        setSquaresVisibility("visible", numOfSquares);
     }
     else if(difficulty === "easy") {
-        squaresLength = 3;  // 3 quadrados
-        setSquaresVisibility("hidden");
+        // numOfSquares = 3;  // 3 quadrados
+        setSquaresVisibility("hidden", numOfSquares);
     }
 
     // Escolhe as cores dos quadrados e atribui-as
-    colors = generateRandomColors(squaresLength);
-    for(let i = 0; i < squaresLength; i++) {
+    colors = generateRandomColors(numOfSquares);
+    for(let i = 0; i < numOfSquares; i++) {
         // usar backgroundColor e não apenas background (mais compatível entre browsers)
         squares[i].style.backgroundColor = "rgb(" + colors[i][0] + ", " + colors[i][1] + ", " + colors[i][2] + ")";
     }
 
     // Escolhe uma cor "correta" e altera o título
-    pickedColor = pickColor(squaresLength);
+    pickedColor = pickColor(numOfSquares);
     for(let i = 0; i < rgbDisplay.length; i++) {
         rgbDisplay[i].textContent = colors[pickedColor][i]
     }
@@ -95,30 +96,12 @@ function reset() {
     feedbackDisplay.textContent = "";
     // titleDisplay.classList.remove("color-transition");
     titleDisplay.style.backgroundColor = "#3A73AA";
-    for(let i = 0; i < squaresLength; i++) { 
-        // squares[i].classList.remove("color-transition");
-    }
+    // for(let i = 0; i < numOfSquares; i++) { 
+    //     // squares[i].classList.remove("color-transition");
+    // }
     colors = [];
     pickedColor = null;
     won = false;
-}
-
-function setSquaresVisibility(mode) {
-    for(let i = 3; i < squares.length; i++) {
-        squares[i].style.visibility = mode;
-    }
-}
-
-function changeHeaderColor(color) {
-    // titleDisplay.classList.add("color-transition");
-    titleDisplay.style.backgroundColor = color;
-}
-
-function changeSquaresColor(color) {
-    for(let i = 0; i < squaresLength; i++) {
-        // squares[i].classList.add("color-transition");
-        squares[i].style.backgroundColor = color;
-    }  
 }
 
 function generateRandomColors(numOfColors) {
@@ -135,4 +118,23 @@ function generateRandomColors(numOfColors) {
 
 function pickColor(numOfColors) {
     return(Math.floor(Math.random() * numOfColors));
+}
+
+// Começa pelo fim do array de squares e muda a visibilidade de (n = numOfSquares) quadrados
+function setSquaresVisibility(mode, numOfSquares) {
+    for(let i = squares.length - 1; i >= squares.length - numOfSquares; i--) {
+        squares[i].style.visibility = mode;
+    }
+}
+
+function changeHeaderColor(color) {
+    // titleDisplay.classList.add("color-transition");
+    titleDisplay.style.backgroundColor = color;
+}
+
+function changeSquaresColor(color) {
+    for(let i = 0; i < numOfSquares; i++) {
+        // squares[i].classList.add("color-transition");
+        squares[i].style.backgroundColor = color;
+    }  
 }

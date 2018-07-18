@@ -5,12 +5,14 @@ html, body {
 
 body {
     background-color: #272822; 
+    /* Remove o espaçamento em torno do elemento */
     margin: 0;
 }
 
 /* Header */
 
 h1, h2 {
+    /* Remove o espaçamento em torno do elemento */
     margin: 0;
 }
 
@@ -25,6 +27,7 @@ h1, h2 {
 
 .subtitle {
     font-size: 2em;
+    /* Tira o negrito padrão do h1 */
     font-weight: normal;
 }
 
@@ -34,8 +37,19 @@ h1, h2 {
 
 /* Navbar */
 
-button, #navbar {
+#navbar {
     height: 25px;
+    /* max-width é 100% relativo ao width do elemento pai */
+    max-width: 100%;
+    background-color: white;
+}
+
+#btn-container {
+    max-width: 600px;
+    width: 80%;
+    height: 100%;
+    margin: 0 auto;
+    text-align: center;
 }
 
 button {
@@ -43,11 +57,19 @@ button {
     border: none;
     background-color: transparent;
     color: #3A73AA;
+    height: 100%;
     text-transform: uppercase;
     text-align: center;
     font-family: 'Roboto Condensed', sans-serif; 
     font-weight: bold;
+    /*font-size: inherit;*/
+    /* Tira a cor em volta quando é clicado */
     outline: none;
+
+    -webkit-transition: all 150ms linear;
+    -ms-transition: all 150ms linear;
+    /* transition: <na onde quer que aplique (qual propriedade)> <duração> <tipo>*/
+    transition: all 150ms linear;
 }
 
 button:hover, .btn-click {
@@ -55,22 +77,9 @@ button:hover, .btn-click {
     color: white;
 }
 
-#navbar {
-    /* max-width é 100% relativo ao width do elemento pai */
-    max-width: 100%;
-    background-color: white;
-}
-
 #feedback-display {
     /* centraliza verticalmente o texto do span */
     line-height: 25px; 
-}
-
-#btn-container {
-    max-width: 600px;
-    width: 80%;
-    margin: 0 auto;
-    text-align: center;
 }
 
 #btn-newgame {
@@ -102,7 +111,9 @@ button:hover, .btn-click {
 }
 
 .color-transition {
+    /* webkit e ms são para compatibilidade entre browsers */
     -webkit-transition: background-color 500ms linear;
     -ms-transition: background-color 500ms linear;
+    /* transition: <na onde quer que aplique (qual propriedade)> <duração> <tipo>*/
     transition: background-color 500ms linear;
 }
