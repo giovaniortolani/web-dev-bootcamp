@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Selectors Exercise</title>
+</head>
+<body>
+    <div>Div 1</div>
+    <div class="highlight">Div 2</div>
+    <div id="third">Div 3</div>
+    <div class="highlight">Div 4</div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+    <script>
+        // Selecionar todas as divs e dar um background purple
+        $("div").css("backgroundColor", "purple");
+
+        // Selecionar todas as divs da classe highlight e colocar largura de 200px
+        $("div.highlight").css("width", "200px");
+
+        // Selecionar a div com id third e colocar borda laranja
+        $("#third").css("border", "1px solid orange");
+
+        // Selecionar a primeira div e colocar cor da fonte pink
+        $("div").first().css("color", "pink");
+        // o método first() pega o primeiro elemento do array e o retorna como objeto jQuery (para poder aplicar o método css() nele)
+        // ou
+        // $("div").eq(0).css("color", "pink");
+        // ou
+        // $("div:first-of-type").css("color", "pink");
+        // é um seletor CSS puro, então é mais rápido que os métodos jQuery
+        // e nesse caso, retorna apenas uma div, nos outros retorna todas as divs e pega a primeira
+    </script>
+</body>
+</html>

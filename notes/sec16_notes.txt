@@ -1,0 +1,78 @@
+jQuery
+======
+
+- É uma biblioteca JS para a manipulação do DOM
+- Permite selecionar elementos, criar elementos, adicionar event listeners, criar animações, ajax etc
+
+Why Use jQuery?
+===============
+
+- youmightnotneedjquery.com 
+
+Including jQuery
+================
+
+- Pode tanto usar o arquivo local como CDN
+
+Selecting with jQuery
+=====================
+
+# $("selector")
+
+- Utiliza $("seletor aqui"), $ = jQuery
+    Ex: $(".class")
+
+# .css(property, value)
+
+- Se usado com um argumento = get, se usado com dois argumentos = set
+- Altera as propriedades css de um elemento
+    Ex: $("#id").css("border", "2px solid red")
+- Também pode ser passado um objeto com as propriedades css a serem mudadas
+    Ex: let styles = {color: "blue", backgroundColor: "black"}
+        $("h1").css(styles);
+- Pode ser usado para aplicar um mesmo estilo para vários elementos ao mesmo tempo (NÃO precisa iterar sobre todos eles e aplicar o estilo)
+
+Text and HTML
+=============
+
+# $().text() (semelhante ao textContent)
+
+- Se usado sem argumento = get, se usado com um argumento = set
+- Recupera o texto de elementos ou define o texto dentro de elementos.
+    Ex: $("div").text(); // traz todos os textos dentro dessa div, incluindo dos elementos filhos
+        $("h1").text("Novo H1!!"); // altera o texto dentro da tag h1
+
+# $().html() (semelhante ao innerHTML)
+
+- Se usado sem argumento = get, se usado com um argumento = set
+- Recupera o HTML dentro do elemento selecionado ou define o HTML dentro do elemento (se for mais de um elemento selecionado, aplica para todos eles)    
+    Ex: $("ul").html(); // traz o HTML de dentro da lista
+        $("ul").html("<li>Hacked!</li>"); // altera o HTML dentro da lista
+
+Attr and Val
+============
+
+# $().attr(propriedade, valor)
+
+- Se usado com um argumento = get, se usado com dois argumentos = set
+- Recupera ou define um atributo de um elemento selecionado (ou mais de um elemento).
+- Para alterar mais de um atributo, devemos passar um objeto com os atributos e os valores
+    Ex: $("img").attr("src");
+        $("img").attr("src", "google.com");
+
+# $().val()
+
+- Se usado sem argumento = get, se usado com um argumento = set
+- Usado para recuperar o valor de um elemento input/dropdown(select) ou para setar o valor de um elemento input ou dropdown(select)
+    Ex: $("input[type='text']").val("Olaaa");
+        $("select").val();  // retorna o valor escolhido menu dropdown
+
+Manipulating Classes
+====================
+- Funcionam exatamente como os métodos de classList
+
+# $().addClass("classes") (pode adicionar mais de uma)
+
+# $().removeClass("classes") (pode remover mais de uma)
+
+# $().toggleClass("classes")

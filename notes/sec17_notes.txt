@@ -1,0 +1,63 @@
+jQuery Events: Click
+====================
+
+# $().click(callback)
+
+- Adiciona um event listener para quando acontecer o click e executa a callback
+- Pode ser feito tanto em um elemento quanto em uma coleção de elementos
+- this em JS puro = $(this) em jQuery
+- Só adiciona o event listener para elementos que já existem
+
+jQuery Events: Keypress
+=======================
+
+# $().keypress(callback)
+
+- Evento é disparado quando a tecla está no movimento de subida
+- A callback aceita o parâmetro "event" que contém as informações sobre o evento disparado
+- A propriedade "which" de event diz qual tecla foi pressionada (event.which) que é código ASCII. Também pode ser verificado pela propriedade "key" (event.key) que é uma string.
+    Ex: $().keypress(function(event) { // do something... });
+
+jQuery Events: On
+=================
+
+# $().on(tipo do evento, callback)
+
+- Parecido com o addEventListener
+- É um event listener mais genérico, pois especificamos como parâmetro qual o evento a ser escutado
+- Evento pode ser: "click", "keypress", "mouseenter", "mouseleave"
+- Adiciona o event listener para elementos podem não existir ainda também
+
+jQuery Events: Effects
+======================
+
+# $().fadeOut(tempo, callback) (parâmetros são opcionais)
+
+- Callback é chamada apenas quando a animação terminar
+- Pode ser usada em conjunto com o método "remove" para remover o elemento HTML da página
+    Ex: $("button").on("click", function() {
+            $("div").fadeOut(1000, function() {
+                $(this).remove();
+            });
+        });
+
+# $().fadeIn(tempo, callback) (parâmetros são opcionais)
+
+- Mesma coisa que fadeOut, porém é In
+
+# $().fadeToggle(tempo) (parâmetros são opcionais)
+
+- Vai decidir se fará o fadeIn ou fadeOut de acordo com o estado do elemento
+
+# $().slideDown(tempo, callback) (parâmetros são opcionais)
+
+- Pega elementos que não estão aparecendo e mostra-os fazendo uma animação para baixo
+
+# $().slideUp(tempo, callback) (parâmetros são opcionais)
+
+- Pega elementos que estão aparecendo e esconde-os fazendo uma animação para cima
+
+# $().slideToggle(tempo, callback) (parâmetros são opcionais)
+
+- Decide entre slideDown e slideUp dependendo do estado do elemento
+
