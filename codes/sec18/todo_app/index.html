@@ -1,0 +1,28 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+        <link rel="stylesheet" type="text/css" href="css/styles.css"> 
+        
+        <!-- Pode colocar aqui pois está apenas importando o jQuery, sem usá-lo -->
+        <script src="js/lib/jquery-3.3.1.min.js"></script>
+
+        <title>TODO List</title>
+    </head>
+    <body>
+        <div id="container">
+            <h1>TO-DO LIST <button>+</button></h1>
+            <input type="text" id="todo-input" name="todo-input" placeholder="Add New Todo">
+            <ul>
+                <li><span class="delete">X</span> Buy food</li>
+                <li><span class="delete">X</span> Read The Demonologist</li>
+                <li><span class="delete">X</span> Take a shower</li>
+            </ul>
+        </div>
+        
+        <!-- Meus scripts que irão interagir com a página -->
+        <script src="js/todos.js"></script>
+    </body>
+</html>

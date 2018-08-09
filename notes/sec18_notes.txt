@@ -1,0 +1,19 @@
+Event Bubbling
+==============
+
+- Quando um evento é disparado para um elemento, ele executa o event handler para esse elemento e depois executa os event handlers para os pais desse elemento (vai propagando)
+- Para evitar o bubbling usamos o método event.stopPropagation() dentro da callback do event handler
+
+on("click") vs click
+====================
+
+- Só podemos adicionar um listener a um elemento que já existe quando o jQuery é executado pela primeira vez
+- Fizemos com que quando os li que estão dentro de ul sofram o evento, o evento handler dispara
+    - O event listener foi adicionado ao ul pois alguns li são dinamicamente criados e não existem quando o jQuery é executado pela primeira vez
+
+- Do mesmo modo, adicionamos um event listener ao ul e quando um elemento com a classe "delete" dentro de ul é clicado, dispara o event listener
+
+$().append(string de HTML)
+==========================
+
+- O método append pega o elemento selecionado e adiciona uma string de HTML a esse elemento

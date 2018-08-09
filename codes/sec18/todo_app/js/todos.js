@@ -1,0 +1,37 @@
+$(document).ready(function() {
+    // Marca como feito/não feito um determinado todo 
+    $("ul").on("click", "li", function() {
+        $(this).toggleClass("mark-as");
+        // ou
+        // rgb(128, 128, 128) = gray
+        // if($(this).css("color") === "rgb(128, 128, 128)") {
+        //     $(this).css({textDecoration: "none", color: "black"});
+        // }
+        // else {
+        //     $(this).css({textDecoration: "line-through", color: "gray"});
+        // }
+    });
+
+    // Deleta um todo ao clicar no lixo
+    $("ul").on("click", ".delete", function(event) {
+        // stopPropagation() evita que o evento seja propagado para o li (elemento pai) e ative o event listener dele
+        event.stopPropagation();
+        $(this).parent().fadeOut(300, function() {
+            $(this).remove();
+        });
+    });
+
+    // Listener do campo de texto para adicionar um novo todo
+    // ou 
+    // $("input[type='text']")
+    $("#todo-input").keypress(function(event) {
+        if(event.key === "Enter") {
+            // extrai o texto do input
+            let newItem = $(this).val();
+            // cria um item e adiciona na lista
+            $("ul").append("<li><span class='delete'>X</span> " + newItem + "</li>");
+            // apaga o texto do input
+            $(this).val("");
+        }
+    });
+});

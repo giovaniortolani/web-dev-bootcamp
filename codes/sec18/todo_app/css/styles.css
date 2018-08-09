@@ -1,0 +1,24 @@
+html, body {
+    height: 100%;    
+}
+
+body {
+    margin: 0;
+}
+
+#container {
+    border: 2px solid gray;
+    /* top/bottom = 0, left/right = auto */
+    margin: 0 auto;
+    /* só dá certo a centralização se especificar um width */
+    width: 400px;
+}
+
+.mark-as {
+    text-decoration: line-through;
+    color: gray;
+}
+
+.delete {
+    color: red;
+}

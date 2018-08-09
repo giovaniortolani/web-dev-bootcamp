@@ -24,13 +24,19 @@ Selecting with jQuery
 
 # .css(property, value)
 
-- Se usado com um argumento = get, se usado com dois argumentos = set
+- Se usado com 1 argumento = get, se usado com 2 argumentos = set
 - Altera as propriedades css de um elemento
     Ex: $("#id").css("border", "2px solid red")
 - Também pode ser passado um objeto com as propriedades css a serem mudadas
     Ex: let styles = {color: "blue", backgroundColor: "black"}
         $("h1").css(styles);
-- Pode ser usado para aplicar um mesmo estilo para vários elementos ao mesmo tempo (NÃO precisa iterar sobre todos eles e aplicar o estilo)
+- Pode ser usado para aplicar um mesmo estilo para vários elementos ao mesmo tempo (NÃO precisa iterar sobre todos eles e aplicar o estilo como fazíamos anteriormente)
+    - Antes selecionavamos todos os li's por exemplo e nessa lista de li's, iteravamos por cada um e alteravamos alguma propriedade
+
+# .first(), .last()
+
+- Pega apenas o primeiro/último elemento de uma seleção
+    Ex: $("li").first().addClass("classe");
 
 Text and HTML
 =============
