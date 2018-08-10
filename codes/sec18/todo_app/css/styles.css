@@ -1,24 +1,132 @@
-html, body {
-    height: 100%;    
-}
-
 body {
     margin: 0;
+    background: #aa4b6b;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #3b8d99, #6b6b83, #aa4b6b);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #3b8d99, #6b6b83, #aa4b6b); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    font-family: 'Oswald', sans-serif;
 }
 
+/* Container da lista */
 #container {
-    border: 2px solid gray;
+    /* offset-x | offset-y | blur-radius | spread-radius | color */
+    -webkit-box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.75);
+    /* padding: 0 20px; */
     /* top/bottom = 0, left/right = auto */
-    margin: 0 auto;
+    margin: 100px auto;
     /* só dá certo a centralização se especificar um width */
     width: 400px;
+    background-color: #F6F4F5;
 }
 
+/* Todo feito */
 .mark-as {
     text-decoration: line-through;
-    color: gray;
+    color: rgb(153, 153, 153);
 }
 
+/* Lata de lixo */
 .delete {
+    float: right;
     color: red;
+    height: 40px;
+    width: 40px;
+    text-align: center;
+    display: inline-block;
+	transition: 0.2s linear;
+    opacity: 0.0;
+    cursor: pointer;
+    font-size: 20px;
 }
+
+li:hover .delete {
+	opacity: 1.0;
+}
+
+.fa-times-circle {
+    /* ajusta a altura do ícone de deletar */
+    height: 40px;
+}
+
+#title {
+    margin: 0 auto;
+    padding: 5px 20px;
+    background-color: #1D6CB4;
+    color: white;
+    text-transform: uppercase;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+/* Campo para adicionar todo */
+#todo-input {
+    padding: 10px 20px;
+    height: 50px;
+    width: 100%;
+    /* remove o brilho laranja que o chrome coloca quando seleciona o objeto */
+    outline: none;
+    /* faz com que o input fique dentro da div */
+    box-sizing: border-box;
+    /* esta borda invisível serve para que quando o elemento seja focado, não fique deslocando o placeholder */
+    border: 2px solid rgba(0, 0, 0, 0);
+    background-color: #F6F4F5;
+    font-family: 'Oswald', sans-serif;
+    font-weight: normal;
+    font-size: 20px;
+}
+
+#todo-input:focus {
+    border: 2px solid #2980B9;
+    background-color: white;
+}
+
+/* Botão para esconder o input de texto */
+button {
+    float: right;
+    border: none;
+    padding: 0;
+    background-color: transparent;
+    color: white;
+    outline: none;
+    font-size: inherit;  
+    height: 36px;
+    line-height: 36px;
+    /* transforma o cursor na mãozinha quando passa pelo botão */
+    cursor: pointer;
+}
+
+/* Lista com todos */
+ul {
+    list-style-type: none; 
+    margin: 0 0;
+    padding: 0 0;
+}
+
+/* Item na lista */
+li { 
+    height: 40px;
+    /* para centralizar o texto usa line-height */
+    line-height: 40px;
+    padding-left: 20px;
+    /* text-transform: capitalize; */
+    color: rgb(82, 82, 82);
+}
+
+/* Item com índice par - começa em 1*/
+/* li:nth-of-type(even) { 
+    background-color: #F6F4F5;
+} */
+
+/* Item com índice ímpar - começa em 1*/
+li:nth-child(odd) { 
+    background-color: white;
+}
+
+/*
+Também pode ser feito desse modo:
+li:nth-child(2n) {
+    ...
+}
+    Vai pegar sempre o segundo elemento a cada dois elementos e aplicar o estilo
+*/

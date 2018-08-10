@@ -28,10 +28,23 @@ $(document).ready(function() {
         if(event.key === "Enter") {
             // extrai o texto do input
             let newItem = $(this).val();
-            // cria um item e adiciona na lista
-            $("ul").append("<li><span class='delete'>X</span> " + newItem + "</li>");
-            // apaga o texto do input
-            $(this).val("");
+            // não insere como novo item um todo sem texto
+            if(newItem !== "") {
+                // extrai o texto do input
+                let newItem = $(this).val();
+                // cria um item e adiciona na lista
+                $("ul").append("<li>" + newItem + " <span class='delete'><i class='far fa-times-circle'></i></span></li>");
+                // apaga o texto do input
+                $(this).val("");
+            }
         }
+    });
+
+    // Listener do botão "+" que esconde/mostra o campo de texto para adição de todo
+    $("button").on("click", function() {
+        $("#todo-input").slideToggle(350, function() {
+            // retorna o foco ao campo de texto para não precisar clicar novamente quando aparece
+            // $(this).focus();
+        });
     });
 });

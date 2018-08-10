@@ -17,3 +17,31 @@ $().append(string de HTML)
 ==========================
 
 - O método append pega o elemento selecionado e adiciona uma string de HTML a esse elemento
+
+box-shadow (CSS)
+================
+
+- Usado para colocar um sobra em torno de um elemento
+- Ex:
+    /* offset-x | offset-y | blur-radius | spread-radius | color */
+    box-shadow: 60px -16px 3px 0px teal;
+
+box-sizing (CSS)
+================
+
+- Define como a width e height de um elemento são calculadas: se eles devem incluir padding e border ou não
+    - content-box	
+        Default. The width and height properties (and min/max properties) includes only the content. Border and padding are not included
+    - border-box	
+        The width and height properties (and min/max properties) includes content, padding and border
+
+gradient (CSS)
+==============
+
+- https://uigradients.com/
+
+Corrigindo bug do botão de excluir com fundo vermelho
+=====================================================
+
+- O bug que cortava o fundo pela metade é causado pela seleção de elemento no CSS
+- Em vez de usar .delete ou span, deve-se usar li span ou li span.delete
