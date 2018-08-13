@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+        <link rel="stylesheet" href="styles.css">
+
+        <!-- Carrega o paper.js -->
+        <script src="paper-full.min.js"></script>
+        <!-- Carrega o script paperscript -->
+        <!-- canvas = id do canvas no qual iremos desenhar -->
+        <script type="text/paperscript" canvas="canvas">
+            var canvasSize = {
+                h: document.querySelector("canvas").height,
+                w: document.querySelector("canvas").width
+            };
+            var numOfCircles = 100;
+            for(var i = 0; i < numOfCircles; i++) {
+                var location = new Point(canvasSize.w, canvasSize.h) * Point.random();
+                var radius = Math.floor(Math.random() * 15);
+                var myCircle = new Path.Circle(location, radius);
+                myCircle.fillColor = new Color(
+                    myCircle.position.x / canvasSize.w, 
+                    myCircle.position.y / canvasSize.h, 
+                    (myCircle.position.x + myCircle.position.y) / (canvasSize.h + canvasSize.w)
+                );
+            }
+        </script>
+
+        <title>Papers.js Exercise</title>
+    </head>
+    <body>
+        <!-- resize faz com que o canvas se adeque ao tamanho da tela do browser -->
+        <canvas id="canvas" resize></canvas>
+    </body>
+</html>

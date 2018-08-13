@@ -1,0 +1,10 @@
+/* Para ficar full screen fazemos isso */
+html, body {
+    margin: 0;
+    height: 100%;
+}
+
+canvas {
+    width: 100%;
+    background-color: black;
+}

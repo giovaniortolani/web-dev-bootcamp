@@ -1,0 +1,8 @@
+paper.js
+========
+- Biblioteca com funções para trabalhar com desenhos sobre o HTML5 Canvas
+
+howler.js
+=========
+- Biblioteca para trabalhar com áudio
+
