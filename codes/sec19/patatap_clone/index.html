@@ -12,23 +12,178 @@
         <!-- Carrega o paper.js -->
         <script src="js/lib/paper-full.min.js"></script>
 
-        <title>Document</title>
+        <title>Patatap Clone</title>
     </head>
     <body>
         <!-- resize faz com que o canvas se adeque ao tamanho da tela do browser -->
         <canvas id="myCanvas" resize></canvas>
 
-        <script>
-            var sound = new Howl({
-                src: ['sounds/bubbles.mp3']
-            });
-
-            sound.play();
-        </script>
         <!-- canvas = id do canvas no qual iremos desenhar -->
         <!-- Define inlined PaperScript associate it with myCanvas -->
         <script type="text/paperscript" canvas="myCanvas">
+            // TODO
+            // - excluir círculos não utilizados do array de círculos (ver a área deles)
+            //
 
+            var keyData = {
+                q: {
+                    sound: new Howl({
+                        src: ['sounds/bubbles.mp3']
+                    }),
+                    color: '#1abc9c'
+                },
+                w: {
+                    sound: new Howl({
+                        src: ['sounds/clay.mp3']
+                    }),
+                    color: '#2ecc71'
+                },
+                e: {
+                    sound: new Howl({
+                        src: ['sounds/confetti.mp3']
+                    }),
+                    color: '#3498db'
+                },
+                r: {
+                    sound: new Howl({
+                        src: ['sounds/corona.mp3']
+                    }),
+                    color: '#9b59b6'
+                },
+                t: {
+                    sound: new Howl({
+                        src: ['sounds/dotted-spiral.mp3']
+                    }),
+                    color: '#34495e'
+                },
+                y: {
+                    sound: new Howl({
+                        src: ['sounds/flash-1.mp3']
+                    }),
+                    color: '#16a085'
+                },
+                u: {
+                    sound: new Howl({
+                        src: ['sounds/flash-2.mp3']
+                    }),
+                    color: '#27ae60'
+                },
+                i: {
+                    sound: new Howl({
+                        src: ['sounds/flash-3.mp3']
+                    }),
+                    color: '#2980b9'
+                },
+                o: {
+                    sound: new Howl({
+                        src: ['sounds/glimmer.mp3']
+                    }),
+                    color: '#8e44ad'
+                },
+                p: {
+                    sound: new Howl({
+                        src: ['sounds/moon.mp3']
+                    }),
+                    color: '#2c3e50'
+                },
+                a: {
+                    sound: new Howl({
+                        src: ['sounds/pinwheel.mp3']
+                    }),
+                    color: '#f1c40f'
+                },
+                s: {
+                    sound: new Howl({
+                        src: ['sounds/piston-1.mp3']
+                    }),
+                    color: '#e67e22'
+                },
+                d: {
+                    sound: new Howl({
+                        src: ['sounds/piston-2.mp3']
+                    }),
+                    color: '#e74c3c'
+                },
+                f: {
+                    sound: new Howl({
+                        src: ['sounds/prism-1.mp3']
+                    }),
+                    color: '#95a5a6'
+                },
+                g: {
+                    sound: new Howl({
+                        src: ['sounds/prism-2.mp3']
+                    }),
+                    color: '#f39c12'
+                },
+                h: {
+                    sound: new Howl({
+                        src: ['sounds/prism-3.mp3']
+                    }),
+                    color: '#d35400'
+                },
+                j: {
+                    sound: new Howl({
+                        src: ['sounds/splits.mp3']
+                    }),
+                    color: '#1abc9c'
+                },
+                k: {
+                    sound: new Howl({
+                        src: ['sounds/squiggle.mp3']
+                    }),
+                    color: '#2ecc71'
+                },
+                l: {
+                    sound: new Howl({
+                        src: ['sounds/strike.mp3']
+                    }),
+                    color: '#3498db'
+                },
+                z: {
+                    sound: new Howl({
+                        src: ['sounds/suspension.mp3']
+                    }),
+                    color: '#9b59b6'
+                },
+                x: {
+                    sound: new Howl({
+                        src: ['sounds/timer.mp3']
+                    }),
+                    color: '#34495e'
+                },
+                c: {
+                    sound: new Howl({
+                        src: ['sounds/ufo.mp3']
+                    }),
+                    color: '#16a085'
+                },
+                v: {
+                    sound: new Howl({
+                        src: ['sounds/veil.mp3']
+                    }),
+                    color: '#27ae60'
+                },
+                b: {
+                    sound: new Howl({
+                        src: ['sounds/wipe.mp3']
+                    }),
+                    color: '#2980b9'
+                },
+                n: {
+                    sound: new Howl({
+                        src: ['sounds/zig-zag.mp3']
+                    }),
+                    color: '#8e44ad'
+                },
+                m: {
+                    sound: new Howl({
+                        src: ['sounds/moon.mp3']
+                    }),
+                    color: '#2c3e50'
+                }
+            }
+    
             var circles = [];
 
             function onKeyDown(event) {
@@ -36,25 +191,42 @@
                 //    h: document.querySelector("canvas").height,
                 //    w: document.querySelector("canvas").width
                 //};
-                
-                var canvasSize = {
-                    h: view.size.height,
-                    w: view.size.width
-                }
 
-                var location = new Point(canvasSize.w, canvasSize.h) * Point.random();
-                var radius = 300;
-                var circle = new Path.Circle(location, radius);
-                circle.fillColor = new Color(Math.random(), Math.random(), Math.random());
-                circles.push(circle);
-                console.log(circles);
+                // se a entrada existe no dicionário, então executa
+                var key = event.key;
+                if(keyData[key]) {
+                    var canvasSize = {
+                        h: view.size.height,
+                        w: view.size.width
+                    }
+    
+                    var location = new Point(canvasSize.w, canvasSize.h) * Point.random();
+                    var radius = 300;
+                    var circle = new Path.Circle(location, radius);
+                    circle.fillColor = keyData[key].color;
+                    circles.push(circle);
+                    keyData[key].sound.play();
+                }
             }
 
+            // a cada segundo executa esta função 30 vezes
             function onFrame(event) {
                 // não dá pra usar for..of pois não é JS, é PaperScript
                 for(var i = 0; i < circles.length; i++) {
+                    // altera a matiz de cor
                     circles[i].fillColor.hue += 2;
-                    circles[i].scale(0.9);
+                    // diminui o tamanho atual em 10%
+                    circles[i].scale(0.95);
+
+                    // remove circulos que não são mais visíveis
+                    if(circles[i].area < 0.5) {
+                        // remove o círculo do canvas
+                        circles[i].remove();
+                        // na posição i, remove 1 elemento do array de círculos
+                        circles.splice(i, 1);
+                        // retorna um índice no array de círculos devido ao shift produzido pelo splice
+                        i--;
+                    }
                 }
             }
         </script>
