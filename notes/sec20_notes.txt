@@ -1,0 +1,38 @@
+Introduction to Backend
+=======================
+- Grande parte da lógica fica aqui
+
+# Dynamic vs Static web page
+- Dinâmica = server compila e constrói a página (HTML, CSS, JS) antes de enviar a resposta. Esses recursos podem mudar a cada request. Portanto, backend é responsável pela dinamicidade da página.
+- Estática = sempre o mesmo conteúdo (HTML, CSS, JS), nunca muda.
+
+# Stack
+- Backend: linguagem/app (Python, Skala, Ruby etc); server (nginx, express etc); database (mongo, couch, postgre etc)
+- Frontend: HTML, CSS, JS
+
+- MEAN stack:
+    - MongoDB como BD
+    - Express como framework web
+    - AngularJS como framework Frontend
+    - NodeJS como servidor
+- Vantagens: apenas uma única linguagem é usada, JSON é usado para transferência de dados, padrão MVC etc.
+
+
+HTTP in depth
+=============
+
+# GET (read)
+- Recupera alguma coisa do servidor 
+- Podem ser passadas queries junto a url e caso o servidor esteja esperando alguma delas, responde de acordo
+    - query string (sempre começa depois do símbolo "?")
+        - ?key1=value&key2=value...
+        - Ex: reddit.com/search?q=corgi&name=giovani
+
+
+Backend workflow pt. 1
+======================
+
+Backend workflow pt. 2
+======================
+
+
