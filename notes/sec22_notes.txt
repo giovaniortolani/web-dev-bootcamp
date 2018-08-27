@@ -1,0 +1,32 @@
+Introduction to Node
+====================
+- Antes: todo código JS era executado apenas no browser pela tag <script>
+- Node é uma maneira de escrever código JS do lado do servidor
+
+Using Node
+==========
+
+# Node Console
+- chamar com "node" no shell
+- É REPL (read, evaluate, print, loop)
+- É um interpretador de código JS
+
+# Executar um arquivo JS com Node
+- No shell: node <filename> 
+
+Introduction to NPM
+===================
+- Node Package Manager
+- Maneira de incluir pacotes JS no servidor, pois não tem HTML (e a tag <script>)
+
+Installing NPM Packages
+=======================
+
+# Instalar
+- npm install <package> ou npm i <package>
+- Cria o diretório "node_modules" no diretório onde o comando foi executado com os arquivos do pacote
+
+# Incluir
+- Utiliza-se no código JS: "require("nome_do_pacote");"
+- Ex:
+    - let pacote = require("express");
