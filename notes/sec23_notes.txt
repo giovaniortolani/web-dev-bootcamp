@@ -1,0 +1,62 @@
+Introduction to Express
+=======================
+
+- Framework chama meu código e não o contrário
+- Library é chamada por mim
+
+- Express é um framework para fazer aplicações web
+- Permite focar no conteúdo da aplicação, não precisa se preocupar com rotas, servidor etc
+- Lightweight
+
+
+Our First Express App
+=====================
+
+# Rotas
+- Códigos responsáveis por escutar e receber requests e decidir o que mandar de volta para o usuário
+
+# Incluindo Express
+- Ex:
+    let express = require("express");   // inclui o pacote
+    let app = express();                // cria uma instância do Express e coloca na variável app
+
+# Criando rotas com Express
+- app.métodoHTTP("endpoint/url", callback);
+    - Os parâmetros da callback são objetos request e response que possuem informações sobre a request e sobre a response
+- Ex:
+    app.get("/", function(req, res) {
+        ...
+    });
+
+# Iniciando o servidor com Express
+- app.listen(porta, hostname, backlog, callback);
+
+
+The package.json
+================
+- Contém metadados de uma aplicação ou um pacote (nome, descrição, dependências etc)
+
+# npm install <package> --save / npm install <package> -S
+- Salva os pacotes instalados em dependencies (-S) ou devDependencies (-D) no arquivo package.json
+- Desse modo não é necessário enviar as dependências junto ao projeto (não sobrecarrega)
+- Flag -D salva em devDependencies, que são módulos necessários apenas durante o desenvolvimento (Babel, Nodemon, ESLint etc)
+- Flag -S salva em dependencies, que são módulos necessários apenas durante o runTime (React, Redux, Express etc)
+
+# npm init
+- Cria o arquivo package.json e pede informações sobre ele
+
+# nodemon
+- Reinicia o servidor quando o arquivo que o define for alterado
+- Instalação: npm install -g nodemon (instala globalmente)
+
+
+Route Params
+============
+
+- Pode-se usar o endpoint "*" para pegar rotas que não foram definidas e evitar aparecer a mensagem "Cannot GET /algumacoisa". Sempre colocar como última rota.
+
+# Route pattern/route variable
+- "/r/:subredditName": diz ao Express para casar o padrão que começa com /r e depois /qualquerpalavra
+- tudo que possui ":" na frente é uma variável que o usuário ou a aplicação pode alterar
+- Para pegar os valores dessas variáveis acessamos a propriedade "params" do request.
+    Ex: req.params.subredditName

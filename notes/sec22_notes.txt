@@ -28,5 +28,6 @@ Installing NPM Packages
 
 # Incluir
 - Utiliza-se no código JS: "require("nome_do_pacote");"
+- Inclui tudo o que está no diretório do pacote
 - Ex:
     - let pacote = require("express");
